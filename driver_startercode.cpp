@@ -117,4 +117,5 @@ void tower(void* param){
 void opcontrol() {
 	pros::Task intakeTask(intake);
 	pros::Task towerTask(tower);
+  pros::Task driveTask(drive);
 }
