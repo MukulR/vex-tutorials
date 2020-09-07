@@ -9,13 +9,14 @@ pros::Controller master(pros::E_CONTROLLER_MASTER);
 // that instant's frame. Press y on your controller to do this.
 // You may need to re-tune the signatures using the V5 vision utility
 // to match with your positioning/light input
-// This system is only reliable when properly tuned and at an adequate distanced
+// This system is only reliable when properly tuned and at an adequate distance
 // from a target, so position it accordingly.
 
 void detect(void *param){
 	// Initialize Vision sensor to use port 16 on the cortex
 	pros::Vision vision_sensor(16);
 	// Declare signatures for the red and blue ball, (I used the v5 vision utility for this, you may have to tune it to fit your needs)
+	// This is where you paste the copied codes from the utility. See the bottom for a deeper explanation.
 	pros::vision_signature_s_t RED_SIG = pros::Vision::signature_from_utility(1, 6383, 9161, 7772, 295, 1195, 745, 4.700, 0);
 	pros::vision_signature_s_t BLUE_SIG = pros::Vision::signature_from_utility(2, -3799, -3103, -3451, 10837, 13745, 12291, 4.500, 0);
 	// Make the vision sensor aware of these signatures
@@ -42,6 +43,12 @@ void detect(void *param){
 		pros::Task::delay(10);
 	}
 }
+
+/* 
+
+
+
+
 
 /* Usage in driver control:
 void opcontrol() {
