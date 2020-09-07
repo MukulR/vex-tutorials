@@ -44,7 +44,20 @@ void detect(void *param){
 	}
 }
 
-/* 
+/* When you paste the codes from the utility it will look like this:
+* vision::signature SIG_1 (1, 6383, 9161, 7772, 295, 1195, 745, 4.700, 0);
+* vision::signature SIG_2 (2, -3799, -3103, -3451, 10837, 13745, 12291, 4.500, 0);
+* vision::signature SIG_3 (3, 0, 0, 0, 0, 0, 0, 3.000, 0);
+* vision::signature SIG_4 (4, 0, 0, 0, 0, 0, 0, 3.000, 0);
+* vision::signature SIG_5 (5, 0, 0, 0, 0, 0, 0, 3.000, 0);
+* vision::signature SIG_6 (6, 0, 0, 0, 0, 0, 0, 3.000, 0);
+* vision::signature SIG_7 (7, 0, 0, 0, 0, 0, 0, 3.000, 0);
+* vex::vision vision1 ( vex::PORT1, 50, SIG_1, SIG_2, SIG_3, SIG_4, SIG_5, SIG_6, SIG_7 );
+*
+* You only need the numbers that are passed as parameters to SIG_1 and SIG_2. Copy those numbers and
+* paste them into the parameters of pros::Vision::signature_from_utility()
+* Make sure the order of your signatures matches the names above (RED_SIG and BLUE_SIG)
+*/
 
 
 
